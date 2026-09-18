@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Status Meter - Overview</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">💧 Status Meter</div>
+    <nav>
+      <a href="index.html" class="active">Overview</a>
+      <a href="monitoring.html">Customer Monitoring</a>
+      <a href="analysis.html">Model Analysis</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="page-title">Overview</div>
+    <div class="page-subtitle">Ringkasan hasil prediksi status meter seluruh pelanggan</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="label">Total Pelanggan</div>
+        <div class="value" id="kpi-total">-</div>
+      </div>
+      <div class="kpi-card naik">
+        <div class="label">Prediksi Naik</div>
+        <div class="value" id="kpi-naik">-</div>
+      </div>
+      <div class="kpi-card tetap">
+        <div class="label">Prediksi Tetap</div>
+        <div class="value" id="kpi-tetap">-</div>
+      </div>
+      <div class="kpi-card turun">
+        <div class="label">Prediksi Turun</div>
+        <div class="value" id="kpi-turun">-</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Distribusi Prediksi Status</h3>
+      <canvas id="chart-distribusi"></canvas>
+    </div>
+
+    <div class="chart-grid">
+      <div class="panel">
+        <h3>Status Berdasarkan Subzona</h3>
+        <canvas id="chart-subzona"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Status Berdasarkan KD Tarif</h3>
+        <canvas id="chart-tarif"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

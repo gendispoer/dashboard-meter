@@ -1,0 +1,14 @@
+[
+  { "no_plg": "100001", "nama": "Andi Wijaya",    "kd_tarif": "A1", "subzona": "SZ-01", "jml_penghuni": 4, "sumur": "Tidak", "pakai_gt10": 8,  "pakai_0": 0, "pressure": 2.4, "status_aktual": "Naik",  "prediksi": "Naik"  },
+  { "no_plg": "100002", "nama": "Budi Santoso",   "kd_tarif": "A2", "subzona": "SZ-01", "jml_penghuni": 2, "sumur": "Ya",    "pakai_gt10": 2,  "pakai_0": 1, "pressure": 1.8, "status_aktual": "Tetap", "prediksi": "Tetap" },
+  { "no_plg": "100003", "nama": "Citra Dewi",     "kd_tarif": "A1", "subzona": "SZ-02", "jml_penghuni": 6, "sumur": "Tidak", "pakai_gt10": 0,  "pakai_0": 5, "pressure": 0.9, "status_aktual": "Turun", "prediksi": "Turun" },
+  { "no_plg": "100004", "nama": "Dedi Kurniawan",  "kd_tarif": "B1", "subzona": "SZ-02", "jml_penghuni": 3, "sumur": "Tidak", "pakai_gt10": 6,  "pakai_0": 0, "pressure": 2.1, "status_aktual": "Naik",  "prediksi": "Naik"  },
+  { "no_plg": "100005", "nama": "Eka Putri",      "kd_tarif": "B2", "subzona": "SZ-03", "jml_penghuni": 5, "sumur": "Ya",    "pakai_gt10": 1,  "pakai_0": 2, "pressure": 1.2, "status_aktual": "Tetap", "prediksi": "Naik"  },
+  { "no_plg": "100006", "nama": "Fajar Ramadhan",  "kd_tarif": "A1", "subzona": "SZ-01", "jml_penghuni": 1, "sumur": "Tidak", "pakai_gt10": 3,  "pakai_0": 0, "pressure": 2.6, "status_aktual": "Naik",  "prediksi": "Naik"  },
+  { "no_plg": "100007", "nama": "Gita Lestari",    "kd_tarif": "A2", "subzona": "SZ-03", "jml_penghuni": 4, "sumur": "Tidak", "pakai_gt10": 0,  "pakai_0": 4, "pressure": 0.7, "status_aktual": "Turun", "prediksi": "Turun" },
+  { "no_plg": "100008", "nama": "Hadi Nugroho",    "kd_tarif": "B1", "subzona": "SZ-02", "jml_penghuni": 2, "sumur": "Ya",    "pakai_gt10": 2,  "pakai_0": 1, "pressure": 1.5, "status_aktual": "Tetap", "prediksi": "Tetap" },
+  { "no_plg": "100009", "nama": "Indah Permata",   "kd_tarif": "A1", "subzona": "SZ-03", "jml_penghuni": 7, "sumur": "Tidak", "pakai_gt10": 9,  "pakai_0": 0, "pressure": 2.8, "status_aktual": "Naik",  "prediksi": "Naik"  },
+  { "no_plg": "100010", "nama": "Joko Prasetyo",   "kd_tarif": "B2", "subzona": "SZ-01", "jml_penghuni": 3, "sumur": "Tidak", "pakai_gt10": 1,  "pakai_0": 3, "pressure": 1.0, "status_aktual": "Turun", "prediksi": "Tetap" },
+  { "no_plg": "100011", "nama": "Kartika Sari",    "kd_tarif": "A2", "subzona": "SZ-02", "jml_penghuni": 4, "sumur": "Ya",    "pakai_gt10": 4,  "pakai_0": 0, "pressure": 1.9, "status_aktual": "Tetap", "prediksi": "Tetap" },
+  { "no_plg": "100012", "nama": "Lukman Hakim",    "kd_tarif": "A1", "subzona": "SZ-01", "jml_penghuni": 5, "sumur": "Tidak", "pakai_gt10": 7,  "pakai_0": 0, "pressure": 2.3, "status_aktual": "Naik",  "prediksi": "Naik"  }
+]

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Status Meter - Model Analysis</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">💧 Status Meter</div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="monitoring.html">Customer Monitoring</a>
+      <a href="analysis.html" class="active">Model Analysis</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="page-title">Model Analysis</div>
+    <div class="page-subtitle">Rata-rata nilai 5 variabel input model, dikelompokkan per hasil prediksi</div>
+
+    <div class="chart-grid">
+      <div class="panel">
+        <h3>Rata-rata JML_PENGHUNI vs Prediksi</h3>
+        <canvas id="chart-penghuni"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Rata-rata Pressure vs Prediksi</h3>
+        <canvas id="chart-pressure"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Rata-rata Jumlah Pakai &gt;10 vs Prediksi</h3>
+        <canvas id="chart-pakai10"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Rata-rata Jumlah Pakai 0 vs Prediksi</h3>
+        <canvas id="chart-pakai0"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>SUMUR vs Prediksi Status</h3>
+      <canvas id="chart-sumur"></canvas>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
