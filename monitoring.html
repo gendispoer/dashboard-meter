@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Dashboard Status Meter - Customer Monitoring</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 
@@ -21,6 +22,24 @@
     <div class="page-subtitle">Telusuri pelanggan beserta input model dan hasil prediksinya</div>
 
     <div class="panel">
+      <h3>Upload Data</h3>
+      <div class="upload-grid">
+        <div class="upload-box">
+          <label>Data Test (ditampilkan di tabel monitoring)</label>
+          <input type="file" id="upload-test" accept=".csv,.json">
+          <p class="upload-hint">Kolom dikenali: NO_PLG, NAMA, KD_TARIF, SUBZONA, JML_PENGHUNI, SUMUR, Jumlah Pakai >10, Jumlah Pakai 0, Pressure, Prediksi</p>
+        </div>
+        <div class="upload-box">
+          <label>Data Train (untuk evaluasi model)</label>
+          <input type="file" id="upload-train" accept=".csv,.json">
+          <p class="upload-hint">Kolom tambahan dikenali: Status / Status Aktual</p>
+        </div>
+      </div>
+      <div class="upload-actions">
+        <span id="upload-status" class="upload-status"></span>
+        <button id="btn-reset-data" class="btn-secondary">Reset ke Data Contoh</button>
+      </div>
+    </div>
       <div class="filters">
         <div class="field">
           <label>Prediksi Status</label>
@@ -65,6 +84,10 @@
           </thead>
           <tbody id="table-body"></tbody>
         </table>
+        <div class="panel" id="panel-evaluasi" style="display:none;">
+          <h3>Evaluasi Model</h3>
+          <table id="confusion-matrix"></table>
+        </div>
       </div>
     </div>
   </main>

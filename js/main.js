@@ -41,8 +41,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // ---------- Halaman: Customer Monitoring ----------
+    // ---------- Halaman: Customer Monitoring ----------
   if (document.getElementById("table-body")) {
     initMonitoringPage(data);
+    setupUploadHandlers();
+    const trainData = loadTrainDataFromStorage();
+    if (trainData) renderConfusionMatrix(trainData);
   }
 });
 
@@ -98,4 +102,64 @@ function initMonitoringPage(data) {
   searchInput.addEventListener("input", render);
 
   render();
+}
+
+function setupUploadHandlers() {
+  const testInput = document.getElementById("upload-test");
+  const trainInput = document.getElementById("upload-train");
+  const resetBtn = document.getElementById("btn-reset-data");
+  const statusEl = document.getElementById("upload-status");
+
+  testInput.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const parsed = await parseUploadedFile(file);
+      saveTestData(parsed);
+      statusEl.textContent = `Data test (${parsed.length} baris) berhasil diupload.`;
+      location.reload();
+    } catch (err) {
+      statusEl.textContent = "Gagal membaca file: " + err.message;
+    }
+  });
+
+  trainInput.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const parsed = await parseUploadedFile(file);
+      saveTrainData(parsed);
+      statusEl.textContent = `Data train (${parsed.length} baris) berhasil diupload.`;
+      renderConfusionMatrix(parsed);
+    } catch (err) {
+      statusEl.textContent = "Gagal membaca file: " + err.message;
+    }
+  });
+
+  resetBtn.addEventListener("click", () => {
+    clearTestData();
+    clearTrainData();
+    location.reload();
+  });
+}
+
+function renderConfusionMatrix(trainData) {
+  const { matrix, statuses, accuracy, total } = computeConfusionMatrix(trainData);
+  const panel = document.getElementById("panel-evaluasi");
+  const table = document.getElementById("confusion-matrix");
+
+  if (!total) { panel.style.display = "none"; return; }
+
+  let html = `<thead><tr><th>Aktual \\ Prediksi</th>${statuses.map(s => `<th>${s}</th>`).join("")}</tr></thead><tbody>`;
+  statuses.forEach(actual => {
+    html += `<tr><td><strong>${actual}</strong></td>`;
+    statuses.forEach(pred => {
+      const correct = actual === pred;
+      html += `<td class="${correct ? "cm-correct" : ""}">${matrix[actual][pred]}</td>`;
+    });
+    html += "</tr>";
+  });
+  table.innerHTML = html + "</tbody>";
+  panel.style.display = "block";
+  panel.querySelector("h3").textContent = `Evaluasi Model — Akurasi ${accuracy}% (${total} baris)`;
 }
