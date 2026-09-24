@@ -197,3 +197,16 @@ tbody tr:hover { background: #f8fafc; cursor: pointer; }
 .table-wrap { overflow-x: auto; max-height: 520px; overflow-y: auto; }
 
 .row-count { color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+.upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+.upload-box { border: 1px dashed var(--border); border-radius: 8px; padding: 14px; }
+.upload-box label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.upload-box input[type="file"] { font-size: 12px; }
+.upload-hint { font-size: 11px; color: var(--muted); margin: 8px 0 0; }
+.upload-actions { display: flex; justify-content: space-between; align-items: center; }
+.upload-status { font-size: 12px; color: var(--primary); }
+.btn-secondary { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 13px; cursor: pointer; }
+.btn-secondary:hover { background: #f0f3f8; }
+#confusion-matrix { width: 100%; border-collapse: collapse; margin-top: 8px; }
+#confusion-matrix th, #confusion-matrix td { padding: 10px 12px; border: 1px solid var(--border); text-align: center; font-size: 13px; }
+#confusion-matrix thead th { background: #f8fafc; }
+#confusion-matrix .cm-correct { background: #dcfce7; font-weight: 700; color: #16a34a; }
